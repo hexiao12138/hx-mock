@@ -1,14 +1,8 @@
-FROM node:8-alpine AS base
-
-# add user group, user and make user home dir
+FROM node:8-alpine
 RUN addgroup --system --gid 1001 easy-mock
-RUN adduser --system --uid 1001 easy-mock
-
+RUN adduser --system --uid 1001 hx
 WORKDIR /app
-
-USER easy-mock
-
-COPY . .
-RUN npm install
-
-RUN npm run build
+COPY --chown=hx . .
+USER hx
+RUN npm install \
+    && npm run build
