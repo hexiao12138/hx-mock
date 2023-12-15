@@ -4,4 +4,3 @@ RUN adduser --system --uid 1001 hx
 USER hx
 WORKDIR /app
 COPY . .
-RUN npm run build
