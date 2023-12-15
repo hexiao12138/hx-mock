@@ -1,8 +1,8 @@
 FROM node:8-alpine AS base
 
 # add user group, user and make user home dir
-RUN addgroup -g 1000 easy-mock && \
-    adduser -D -u 1000 -G easy-mock easy-mock
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
 
 WORKDIR /app
 
