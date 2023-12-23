@@ -19,13 +19,13 @@ services:
     restart: always
 
   web:
-    image: easymock/easymock:1.6.0
-    command: /bin/bash -c "npm start"
+    image: easy-test:1.0
+    command: sh -c "npm start"
     ports:
       - 7300:7300
     volumes:
-      - './logs:/home/easy-mock/easy-mock/logs'
-      - './config/production.json:/home/easy-mock/easy-mock/config/production.json'
+      - './logs:/app/logs'
+      - './config/production.json:/app/config/production.json'
     networks:
       - easy-mock
     restart: always
