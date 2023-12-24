@@ -26,5 +26,4 @@ yarn-debug.log*
 yarn-error.log*
 dist
 config
-views/config.json
 public/upload
